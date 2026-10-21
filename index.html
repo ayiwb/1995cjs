@@ -1,23 +1,29 @@
+
 <!doctype html>
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chin Jih Shern Industrial Co., Ltd. </title>
+<title>勤日盛工業股份有限公司 Chin Jih Shern Industrial Co., Ltd.</title>
+<meta name="description" content="勤日盛工業股份有限公司：專注研發、製造與銷售空、油壓千斤頂及醫療油壓缸，通過 ISO 9001:2015 認證。">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   換圖只要改這裡（頁面最上方和最下方共用同一張背景）：
+   【換背景圖只要改這一行】頁面最上方和最下方共用同一張：
    把整段 repeating-linear-gradient(...) 換成
-   url("images/detail.jpg") center/cover no-repeat
-   主色想換，改 --accent 就好
+   url("你的圖片路徑.JPG") center/cover no-repeat
+   （把你之前已經改好的那一行貼回來即可）
    ============================================================ */
 :root{
   --bg-img: url(image/cjsbg.JPG) center/cover no-repeat;
-  --accent:#0b7a5c;
+  --accent:#1559b7;        /* 主色：藍 */
+  --accent-dark:#0f4694;   /* 藍色加深 */
+  --accent-soft:#e3edfb;   /* 藍色淡底 */
+  --accent2:#f27a1a;       /* 輔色：橘 */
+  --accent2-dark:#d9650a;  /* 橘色加深 */
   --ink:#1b2328;
   --muted:#4a565e;
   --line:#d6dce0;
@@ -29,7 +35,6 @@ body{margin:0;font-family:'Noto Sans TC',system-ui,sans-serif;color:var(--ink);b
 a{color:var(--accent)}
 img{max-width:100%;display:block}
 .wrap{padding-left:clamp(16px,4vw,56px);padding-right:clamp(16px,4vw,56px)}
-.en{font-family:'Barlow Condensed','Noto Sans TC',sans-serif}
 
 /* ---------- 捲動出現動畫 ---------- */
 .js .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
@@ -41,10 +46,10 @@ img{max-width:100%;display:block}
   *{animation:none !important}
 }
 
-/* ---------- 固定頂部選單：一開始透明，捲動後變實心 ---------- */
+/* ---------- 固定頂部選單 ---------- */
 header{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 32px;padding-top:14px;padding-bottom:14px;color:#fff;transition:background .3s,box-shadow .3s,color .3s}
 header.solid{background:rgba(255,255,255,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line);color:var(--ink)}
-header .brand{font-family:'Barlow Condensed','Noto Sans TC',sans-serif;font-weight:700;font-size:26px;letter-spacing:.04em;color:inherit;text-decoration:none}
+header .brand{font-family:'Barlow Condensed','Noto Sans TC',sans-serif;font-weight:700;font-size:26px;letter-spacing:.04em;color:inherit;text-decoration:none;text-transform:uppercase}
 nav{display:flex;flex-wrap:wrap;gap:0 28px}
 nav a{color:inherit;text-decoration:none;padding:12px 0;font-size:15px;position:relative}
 nav a::after{content:"";position:absolute;left:0;bottom:6px;height:2px;width:0;background:currentColor;transition:width .25s}
@@ -56,22 +61,32 @@ nav a:hover::after{width:100%}
 .hero .tag{font-family:'Barlow Condensed',sans-serif;letter-spacing:.3em;font-size:14px;text-transform:uppercase;display:flex;align-items:center;gap:14px;margin-bottom:12px;animation:up .8s ease both}
 .hero .tag::before{content:"";width:48px;height:2px;background:#fff}
 .hero h1{margin:0;font-family:'Barlow Condensed','Noto Sans TC',sans-serif;font-weight:700;font-size:clamp(48px,9vw,120px);line-height:.98;letter-spacing:.01em;text-transform:uppercase;animation:up .9s .1s ease both}
-.hero h1 span{color:#4ad8aa}
-.hero p{margin:20px 0 28px;max-width:560px;font-size:18px;animation:up .9s .2s ease both}
+.hero h1 span{color:var(--accent2)}
+.hero p{margin:20px 0 28px;max-width:640px;font-size:clamp(18px,2.2vw,24px);letter-spacing:.12em;animation:up .9s .2s ease both}
 @keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 .btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 32px;background:var(--accent);color:#fff;text-decoration:none;font-weight:500;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));transition:background .2s,transform .2s}
-.btn:hover{background:#09654c;color:#fff;transform:translateY(-2px)}
-.hero .btn{animation:up .9s .3s ease both}
+.btn:hover{background:var(--accent-dark);color:#fff;transform:translateY(-2px)}
+/* 主視覺的橘色按鈕（橘底配深色字，對比才夠清楚） */
+.hero .btn{background:var(--accent2);color:var(--ink);font-weight:700;animation:up .9s .3s ease both}
+.hero .btn:hover{background:var(--accent2-dark);color:var(--ink)}
 
 .about{padding-top:32px;padding-bottom:120px}
-.card{max-width:920px;margin:0 auto;background:rgba(255,255,255,.95);padding:clamp(28px,4vw,56px);border-top:4px solid var(--accent);box-shadow:0 20px 50px rgba(20,30,36,.12)}
+.card{max-width:980px;margin:0 auto;background:rgba(255,255,255,.96);padding:clamp(28px,4vw,56px);border-top:4px solid var(--accent2);box-shadow:0 20px 50px rgba(20,30,36,.12)}
+.card p{color:var(--muted);margin:0 0 14px}
 .eyebrow{font-family:'Barlow Condensed',sans-serif;letter-spacing:.28em;text-transform:uppercase;font-size:14px;color:var(--accent);display:flex;align-items:center;gap:12px;margin:0 0 8px;font-weight:600}
 .eyebrow::before{content:"";width:32px;height:2px;background:var(--accent)}
 h2{margin:0 0 16px;font-size:clamp(26px,3.4vw,36px);line-height:1.3}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;margin:28px 0 8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:20px 12px;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,4vw,48px);line-height:1.1;color:var(--accent);font-weight:700}
+.stat span{font-size:14px;color:var(--muted)}
+.quote{margin:22px 0 0;padding-left:16px;border-left:4px solid var(--accent2);font-weight:500;color:var(--ink)}
 
 /* ---------- 區塊 3：產品（白底，圖文交錯） ---------- */
 .products{background:#fff;padding-top:24px;padding-bottom:96px}
 .section-head{max-width:1080px;margin:0 auto 56px}
+.section-head p.lead{margin:0;color:var(--muted);max-width:760px}
 .rows{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:88px}
 .row{display:flex;flex-wrap:wrap;align-items:center;gap:40px 72px}
 .row.flip{flex-direction:row-reverse}
@@ -80,27 +95,28 @@ h2{margin:0 0 16px;font-size:clamp(26px,3.4vw,36px);line-height:1.3}
 .row h3{margin:0 0 12px;font-size:26px;line-height:1.35}
 .row p{margin:0;color:var(--muted)}
 .frame{flex:1 1 320px;min-width:0;position:relative;transition:transform .35s}
-.frame::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:2px solid var(--accent);opacity:.55;transition:inset .35s}
+.frame::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:2px solid var(--accent2);opacity:.8;transition:inset .35s}
 .row.flip .frame::before{inset:16px 16px -16px -16px}
 .frame:hover{transform:translateY(-6px)}
 .photo{position:relative;width:100%;aspect-ratio:4/3;object-fit:contain;background-color:#fff}
 .placeholder{background:repeating-linear-gradient(135deg,#e3e8ea 0,#e3e8ea 12px,#edf1f2 12px,#edf1f2 24px);display:flex;align-items:center;justify-content:center;color:#4a565e;font-size:14px}
 
-/* ---------- 區塊 4：Q&A（白底） ---------- */
-.faq{background:var(--soft);padding-top:80px;padding-bottom:88px}
-.faq .inner{max-width:880px;margin:0 auto}
-details{background:#fff;border:1px solid var(--line);margin-bottom:10px;transition:box-shadow .2s,border-color .2s}
-details[open]{border-color:var(--accent);box-shadow:0 8px 24px rgba(20,30,36,.08)}
-summary{cursor:pointer;font-weight:500;padding:16px 56px 16px 20px;position:relative;list-style:none}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:24px;color:var(--accent);transition:transform .25s}
-details[open] summary::after{content:"–"}
-details p{margin:0;padding:0 20px 18px;color:var(--muted)}
+/* ---------- 區塊 4：品質與未來展望 ---------- */
+.quality{background:var(--soft);padding-top:80px;padding-bottom:88px}
+.quality .inner{max-width:1080px;margin:0 auto}
+.quality .lead{max-width:820px;color:var(--muted);margin:0 0 36px}
+.pdca{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.pdca div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--accent2);padding:22px 20px;transition:transform .25s,box-shadow .25s}
+.pdca div:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(20,30,36,.1)}
+.pdca b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:48px;line-height:1;color:var(--accent);font-weight:700}
+.pdca strong{display:block;font-size:18px;margin-top:6px}
+.pdca span{font-size:14px;color:var(--muted)}
+.badge{display:inline-block;margin-top:32px;padding:10px 20px;background:#fff;border:1px solid var(--accent);color:var(--accent);font-weight:700}
 
 /* ---------- 區塊 5：聯絡我們（與最上方同一張背景，由白色漸層帶入） ---------- */
 .contact{padding-top:140px;padding-bottom:80px;background:linear-gradient(to bottom,#fff 0,rgba(255,255,255,0) 45%,rgba(12,18,22,.35) 100%),var(--bg-img);background-attachment:fixed}
 .contact .grid{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;gap:32px;align-items:stretch}
-.panel{background:#fff;padding:32px;border-top:4px solid var(--accent);box-shadow:0 20px 50px rgba(20,30,36,.15)}
+.panel{background:#fff;padding:32px;border-top:4px solid var(--accent2);box-shadow:0 20px 50px rgba(20,30,36,.15)}
 .panel.qr{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center}
 .panel.links{flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:6px}
 .panel h2{margin:0;font-size:28px}
@@ -112,22 +128,22 @@ details p{margin:0;padding:0 20px 18px;color:var(--muted)}
 .panel .btn{align-self:flex-start;margin-top:14px}
 .social{max-width:1000px;margin:32px auto 0;display:flex;flex-wrap:wrap;gap:12px}
 .social a{width:48px;height:48px;background:#fff;display:block;transition:transform .2s,background .2s}
-.social a:hover{transform:translateY(-4px);background:#dff5ed}
+.social a:hover{transform:translateY(-4px);background:var(--accent-soft)}
 
 footer{background:#0f1519;color:#dfe5e8;text-align:center;padding:28px 16px;font-size:14px}
 
 /* iOS Safari 不支援固定背景，手機版改成一般捲動 */
-@media (max-width:820px){.contact{background-attachment:scroll}.frame::before,.row.flip .frame::before{inset:10px -8px -10px 8px}}
+@media (max-width:820px){.contact{background-attachment:scroll}.frame::before,.row.flip .frame::before{inset:10px -8px -10px 8px}.stat{border-right:0;border-bottom:1px solid var(--line)}}
 </style>
 </head>
 <body id="top">
 
 <header id="site-header" class="wrap">
-  <a class="brand" href="#top">[Chin Jih Shern Industrial Co., Ltd. ]</a>
+  <a class="brand" href="#top">Chin Jih Shern</a>
   <nav aria-label="主選單">
     <a href="#about">關於我們</a>
     <a href="#products">產品特色</a>
-    <a href="#faq">常見問題</a>
+    <a href="#quality">品質認證</a>
     <a href="#contact">聯絡我們</a>
   </nav>
 </header>
@@ -135,110 +151,90 @@ footer{background:#0f1519;color:#dfe5e8;text-align:center;padding:28px 16px;font
 <!-- 區塊 1+2：主視覺、公司簡介 -->
 <section class="top">
   <div class="hero wrap">
-    <div class="tag">[Industrial Solutions]</div>
-    <h1>[Product <span>Quality First,</span><br> Better Every Day]</h1>
-    <p>『勤重質量，日月精進，盛果在望』自我期許，不斷追求卓越。</p>
+    <div class="tag">Always Striving for Excellence</div>
+    <h1>Quality First,<br><span>Better Every Day</span></h1>
+    <p>勤重質量，日月精進，盛果在望</p>
     <a class="btn" href="#products">了解產品</a>
   </div>
   <div id="about" class="about wrap">
     <div class="card reveal">
       <p class="eyebrow">About Us</p>
-      <h2>關於我們</h2>
-      <p style="margin:0;color:var(--muted)">[【企業概況】勤日盛工業股份有限公司的沿革為創立於1987年的大大工業股份有限公司。在台灣產業紛紛轉向中國大陸設廠時，本公司選擇留在台灣，並於1995年創建勤日盛工業股份有限公司，持續深耕本地製造業。
+      <h2>企業概況</h2>
+      <p>勤日盛工業股份有限公司的沿革為創立於 1987 年的大大工業股份有限公司。在台灣產業紛紛轉向中國大陸設廠時，本公司選擇留在台灣，並於 1995 年創建勤日盛工業股份有限公司，持續深耕本地製造業。</p>
+      <p>本公司專注於研究、開發、製造與銷售各類空、油壓千斤頂及醫療油壓缸，產品主要銷售至美國、歐洲、日本及澳洲市場。公司現有兩處廠區，分別為嘉義海口寮廠與嘉義大埔美廠，其中大埔美廠為目前主要營運基地。</p>
 
-本公司專注於研究、開發、製造與銷售各類空、油壓千斤頂及醫療油壓缸，產品主要銷售至美國、歐洲、日本及澳洲市場。公司現有兩處廠區，分別為嘉義海口寮廠與嘉義大埔美廠，其中大埔美廠為目前主要營運基地。
-
-【公司規模與技術優勢】
-
-總廠區面積：4613 平方米
-建築面積：7242 平方米
-員工總數：30 人
-
-具備完整的電腦設計開發系統與專業檢測設備，生產能力強，產品種類齊全
-
-【主要產品】
-本公司生產多種系列千斤頂產品，包括：
-立式、臥式千斤頂
-氣動、電動千斤頂
-醫療及工業用千斤頂
-
-累積二十餘年的技術經驗，本公司已取得多項產品專利，成為台灣專業的千斤頂製造與銷售企業。
-
-【品質與未來展望發展】
-為提升競爭力，本公司積極擴展產能，嘉義大埔美新廠已正式運營，並引進先進加工設備，以提升關鍵零組件的自製率，確保產品品質穩定並提升市場競爭力。
-
-公司通過 ISO 9001:2015 品質管理系統認證，並嚴格執行 P (計劃)、D (執行)、C (檢討)、A (改善) 的品質管理循環，以確保產品品質持續提升，並提供完善的售後服務，滿足客戶需求。
-
-我們秉持「創新設計，精細製造」的經營理念，持續為全球客戶提供一流產品與服務，並以『勤重質量，日月精進，盛果在望』自我期許，不斷追求卓越。]</p>
+      <div class="stats">
+        <div class="stat"><b>1987</b><span>創立（大大工業）</span></div>
+        <div class="stat"><b>1995</b><span>勤日盛工業成立</span></div>
+        <div class="stat"><b>4,613 m²</b><span>總廠區面積</span></div>
+        <div class="stat"><b>7,242 m²</b><span>建築面積</span></div>
+        <div class="stat"><b>30</b><span>員工總數</span></div>
+      </div>
+      <p style="margin-top:16px">具備完整的電腦設計開發系統與專業檢測設備，生產能力強，產品種類齊全。</p>
+      <p class="quote">「創新設計，精細製造」——持續為全球客戶提供一流產品與服務。</p>
     </div>
   </div>
 </section>
 
-<!-- 區塊 3：產品（3–5 組，最多 7 組；要增加就複製一個 .row，交錯排列時加或不加 flip） -->
+<!-- 區塊 3：產品（目前 3 組；要增加就複製一個 .row，交錯排列時加或不加 flip） -->
 <section id="products" class="products wrap">
   <div class="section-head reveal">
-    <p class="eyebrow">Features</p>
-    <h2>產品特色</h2>
+    <p class="eyebrow">Products</p>
+    <h2>主要產品</h2>
+    <p class="lead">累積二十餘年的技術經驗，已取得多項產品專利，是台灣專業的千斤頂製造與銷售企業。</p>
   </div>
   <div class="rows">
 
     <div class="row">
       <div class="text reveal">
         <span class="num" aria-hidden="true">01</span>
-        <h3>[特色 1 標題]</h3>
-        <p>[一兩句說明這個特色。]</p>
+        <h3>立式、臥式千斤頂</h3>
+        <p>[產品說明：用途、特色、規格重點]</p>
       </div>
       <div class="frame reveal d1">
-        <!-- 換圖：把下一行換成 <img class="photo" src="images/p1.jpg" alt="產品名稱"> -->
-        <div class="photo placeholder" role="img" aria-label="產品照 1 預留位置">產品照 1</div>
+        <!-- 換圖：把下一行換成 <img class="photo" src="images/products/p1.jpg" alt="立式、臥式千斤頂"> -->
+        <div class="photo placeholder" role="img" aria-label="立式、臥式千斤頂 產品照預留位置">產品照 1</div>
       </div>
     </div>
 
     <div class="row flip">
       <div class="text reveal">
         <span class="num" aria-hidden="true">02</span>
-        <h3>[特色 2 標題]</h3>
-        <p>[一兩句說明這個特色。]</p>
+        <h3>氣動、電動千斤頂</h3>
+        <p>[產品說明：用途、特色、規格重點]</p>
       </div>
       <div class="frame reveal d1">
-        <div class="photo placeholder" role="img" aria-label="產品照 2 預留位置">產品照 2</div>
+        <div class="photo placeholder" role="img" aria-label="氣動、電動千斤頂 產品照預留位置">產品照 2</div>
       </div>
     </div>
 
     <div class="row">
       <div class="text reveal">
         <span class="num" aria-hidden="true">03</span>
-        <h3>[特色 3 標題]</h3>
-        <p>[一兩句說明這個特色。]</p>
+        <h3>醫療及工業用千斤頂</h3>
+        <p>[產品說明：用途、特色、規格重點]</p>
       </div>
       <div class="frame reveal d1">
-        <div class="photo placeholder" role="img" aria-label="產品照 3 預留位置">產品照 3</div>
-      </div>
-    </div>
-
-    <div class="row flip">
-      <div class="text reveal">
-        <span class="num" aria-hidden="true">04</span>
-        <h3>[特色 4 標題]</h3>
-        <p>[一兩句說明這個特色。]</p>
-      </div>
-      <div class="frame reveal d1">
-        <div class="photo placeholder" role="img" aria-label="產品照 4 預留位置">產品照 4</div>
+        <div class="photo placeholder" role="img" aria-label="醫療及工業用千斤頂 產品照預留位置">產品照 3</div>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- 區塊 4：簡單 Q&A -->
-<section id="faq" class="faq wrap">
+<!-- 區塊 4：品質與未來展望 -->
+<section id="quality" class="quality wrap">
   <div class="inner reveal">
-    <p class="eyebrow">FAQ</p>
-    <h2>常見問題</h2>
-    <details><summary>[問題 1：例如 運送需要多久？]</summary><p>[回答 1]</p></details>
-    <details><summary>[問題 2：例如 可以退換貨嗎？]</summary><p>[回答 2]</p></details>
-    <details><summary>[問題 3：例如 如何保養 / 使用？]</summary><p>[回答 3]</p></details>
-    <details><summary>[問題 4：例如 有哪些付款方式？]</summary><p>[回答 4]</p></details>
+    <p class="eyebrow">Quality</p>
+    <h2>品質與未來展望</h2>
+    <p class="lead">為提升競爭力，本公司積極擴展產能。嘉義大埔美新廠已正式運營，並引進先進加工設備，以提升關鍵零組件的自製率，確保產品品質穩定並提升市場競爭力。嚴格執行 PDCA 品質管理循環，並提供完善的售後服務，滿足客戶需求。</p>
+    <div class="pdca">
+      <div><b>P</b><strong>計劃</strong><span>Plan</span></div>
+      <div><b>D</b><strong>執行</strong><span>Do</span></div>
+      <div><b>C</b><strong>檢討</strong><span>Check</span></div>
+      <div><b>A</b><strong>改善</strong><span>Act</span></div>
+    </div>
+    <span class="badge">ISO 9001:2015 品質管理系統認證</span>
   </div>
 </section>
 
@@ -247,16 +243,16 @@ footer{background:#0f1519;color:#dfe5e8;text-align:center;padding:28px 16px;font
   <div class="grid">
     <div class="panel qr reveal">
       <h2>聯絡我們</h2>
-      <!-- 換圖：把下一行換成 <img src="images/qr.png" alt="QR Code" style="width:100%;max-width:240px"> -->
+      <!-- 換圖：把下一行換成 <img src="images/contact/qr.png" alt="QR Code" style="width:100%;max-width:240px"> -->
       <div class="qrbox" role="img" aria-label="QR Code 預留位置">QR Code</div>
       <p style="margin:0;font-size:14px;color:var(--muted)">[掃描加入官方 LINE / 社群]</p>
     </div>
     <div class="panel links reveal d1">
-      <h3>商店連結</h3>
-      <a class="linkrow" href="#"><span class="ico" aria-hidden="true"></span>[蝦皮商店]</a>
-      <a class="linkrow" href="#"><span class="ico" aria-hidden="true"></span>[官方網路商店]</a>
-      <a class="linkrow" href="#"><span class="ico" aria-hidden="true"></span>[Email / 電話]</a>
-      <a class="linkrow" href="#"><span class="ico" aria-hidden="true"></span>[Instagram / Facebook]</a>
+      <h3>聯絡與商店</h3>
+      <a class="linkrow" href="#"><span class="ico" aria-hidden="true"></span>[電話]</a>
+      <a class="linkrow" href="#"><span class="ico" aria-hidden="true"></span>[Email]</a>
+      <a class="linkrow" href="#"><span class="ico" aria-hidden="true"></span>[地址：嘉義大埔美廠]</a>
+      <a class="linkrow" href="#"><span class="ico" aria-hidden="true"></span>[商店連結]</a>
       <a class="btn" href="#">前往商店</a>
     </div>
   </div>
@@ -270,7 +266,7 @@ footer{background:#0f1519;color:#dfe5e8;text-align:center;padding:28px 16px;font
 </section>
 
 <!-- 區塊 6：頁尾 -->
-<footer>© [年份] [品牌名稱]. All rights reserved.</footer>
+<footer>© 2026 勤日盛工業股份有限公司 Chin Jih Shern Industrial Co., Ltd. All rights reserved.</footer>
 
 <script>
 /* 1) 捲動後頂部選單變實心 */
@@ -290,4 +286,6 @@ footer{background:#0f1519;color:#dfe5e8;text-align:center;padding:28px 16px;font
 })();
 </script>
 </body>
+</html>
+
 </html>
